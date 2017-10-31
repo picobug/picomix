@@ -5,3 +5,9 @@
  https://opensource.org/licenses/MIT
 -->
 
+
+# PicoMix
+
+## What is this ?
+
+This is repo prototyping with laravel mix, you can build standalone frontend before implement to production laravel repo.
