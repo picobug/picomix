@@ -1,8 +1,10 @@
 import * as React from 'react'
 
-export default class App extends React.Component {
+export default class App extends React.Component
     constructor: (props) ->
-        super(props)
+      super(props)
     render: ->
-        <p>Lorem <sub>Ipsum</sub></p>
-}
+        <div className="test">
+            Lorem <sub>Test</sub>
+        </div>
+
