@@ -1,6 +1,8 @@
-import React, { Component } from 'react'
+import * as React from 'react'
 
-export default class App extends Component {
-	render: ->
-		<p>Lorem <sub>Ipsum</sub></p>
+export default class App extends React.Component {
+    constructor: (props) ->
+        super(props)
+    render: ->
+        <p>Lorem <sub>Ipsum</sub></p>
 }

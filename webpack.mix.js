@@ -44,7 +44,12 @@ mix
           removeComments: true
         }
       })
-    ]
+    ],
+    resolve: {
+      alias: {
+        assets: path.resolve(__dirname, "./resources/assets")
+      }
+    }
   })
   .setPublicPath("public");
 
