@@ -5,6 +5,6 @@ export default class App extends React.Component
       super(props)
     render: ->
         <div className="test">
-            Lorem <sub>Test</sub>
+            Lorem <sub>Coffee</sub>
         </div>
 

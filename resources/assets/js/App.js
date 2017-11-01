@@ -1,11 +1,11 @@
-import * as React from "react";
+import * as React from "react"
 
 export default class App extends React.Component {
-  render() {
-    return (
-      <p>
-        Lorem <sub>Test</sub>
-      </p>
-    );
-  }
+	render() {
+		return (
+			<p>
+				Lorem <sub>Javascript</sub>
+			</p>
+		)
+	}
 }
