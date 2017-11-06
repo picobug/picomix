@@ -1,93 +1,14 @@
-let mix = require("laravel-mix");
-let path = require("path");
-const HTMLPlugin = require("html-webpack-plugin");
-const SWPrecacheWebpackPlugin = require("sw-precache-webpack-plugin");
+const mix = require("laravel-mix")
+const base = require("./resources/config/base")
 
-mix
-  .webpackConfig({
-    devServer: {
-      contentBase: path.resolve(__dirname, "public"),
-      historyApiFallback: true,
-      open: true,
-      compress: true
-    },
-    module: {
-      rules: [
-        {
-          test: /\.ejs$/,
-          loader: "ejs-loader",
-          query: {
-            includePaths: [path.resolve(__dirname, "./resources/templates/")]
-          }
-        },
-        {
-          test: /\.(coffee|cjsx)$/,
-          exclude: /node_modules/,
-          loader: "coffee-loader",
-          options: {
-            transpile: {
-              presets: [
-                "react",
-                [
-                  "env",
-                  {
-                    modules: false,
-                    targets: {
-                      browsers: ["> 2%"],
-                      uglify: true
-                    }
-                  }
-                ]
-              ],
-              plugins: ["transform-object-rest-spread"]
-            }
-          }
-        }
-      ]
-    },
-    plugins: [
-      new SWPrecacheWebpackPlugin({
-        cacheId: "keepomix",
-        filename: "sw.js",
-        maximumFileSizeToCacheInBytes: 4194304,
-        minify: true,
-        staticFileGlobsIgnorePatterns: [/public\/.*\.html/],
-        runtimeCaching: [
-          {
-            handler: "cacheFirst",
-            urlPattern: /fonts\/.*$/
-          }
-        ]
-      }),
-      new HTMLPlugin({
-        title: "examples",
-        template: "./resources/templates/default.ejs",
-        minify: {
-          collapseWhitespace: true,
-          removeComments: true
-        },
-        inject: false,
-        appMountId: "main",
-        serviceWorker: "/sw.js"
-      })
-    ],
-    resolve: {
-      alias: {
-        assets: path.resolve(__dirname, "./resources/assets")
-      }
-    }
-  })
-  .setPublicPath("public");
+mix.webpackConfig(base).setPublicPath("public")
 
-mix.js(
-  "./resources/assets/coffee/index.coffee",
-  "./public/js/editor-coffee.js"
-);
-mix.js("./resources/assets/js/index.js", "./public/js/editor-js.js");
-mix.ts("./resources/assets/ts/index.tsx", "./public/js/editor-ts.js");
-mix.extract(["react", "react-dom"]);
+mix.js("./resources/assets/coffee/index.coffee", "./public/js/editor-coffee.js")
+mix.react("./resources/assets/js/index.js", "./public/js/editor-js.js")
+mix.ts("./resources/assets/ts/index.tsx", "./public/js/editor-ts.js")
+mix.extract(["react", "react-dom"])
 if (mix.isProduction) {
-  mix.version();
+	mix.version()
 }
 
 // Full API

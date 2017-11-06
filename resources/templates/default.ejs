@@ -59,10 +59,6 @@
                         <%= require('./partial.ejs')({webpackConfig: webpackConfig}) %>
                       </div>
 
-                      <div id="content">
-                        <%= require('./content.ejs')({webpackConfig: webpackConfig}) %>
-                      </div>
-
                       <% if (htmlWebpackPlugin.options.window) { %>
                         <script>
   <% for (var varName in htmlWebpackPlugin.options.window) { %>
