@@ -1,0 +1,7 @@
+.main {
+	display: flex;
+	color: red;
+	&_data {
+		color: pink;
+	}
+}
