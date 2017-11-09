@@ -1,6 +1,5 @@
 import * as React from "react"
-import style from "./style.css"
-console.log(style)
+import style from "assets/sass/style.scss"
 
 export default class App extends React.Component {
 	render() {
