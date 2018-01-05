@@ -30,7 +30,7 @@ const base = {
 								{
 									modules: false,
 									targets: {
-										browsers: ["> 2%"],
+										browsers: ["last 2 versions", "ie > 8"],
 										uglify: true
 									}
 								}
@@ -70,7 +70,9 @@ const base = {
 	],
 	resolve: {
 		alias: {
-			assets: path.resolve(__dirname, "../assets")
+			assets: path.resolve(__dirname, "../assets"),
+			store: path.resolve(__dirname, "../store"),
+			libs: path.resolve(__dirname, "../lib")
 		},
 		extensions: [".coffee", ".cjsx"]
 	}
