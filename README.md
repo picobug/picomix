@@ -5,8 +5,9 @@
  https://opensource.org/licenses/MIT
 -->
 
-
 # PicoMix
+
+Please Update Package NPM first for your environment. Because github detect security hole in packages. Thanks and Happy Code
 
 ## What is this ?
 
