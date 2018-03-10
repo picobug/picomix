@@ -12,3 +12,8 @@ Please Update Package NPM first for your environment. Because github detect secu
 ## What is this ?
 
 This is repo prototyping with laravel mix, you can build standalone frontend before implement to production laravel repo.
+
+## Update v0.0.3
+
+* Fix Packages Dependency
+* Dont update ts-loader to v4 because incompatible webpack 3
